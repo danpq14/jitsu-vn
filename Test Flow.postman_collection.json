@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "612cd221-c96a-4f4d-adbe-4942bf3298f7",
+		"name": "Test Flow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39128812"
+	},
+	"item": [
+		{
+			"name": "1st Step: Driver view Booking Sessions",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "driver123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "driver1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/api/booking-sessions/driver",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"booking-sessions",
+						"driver"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2nd Step: Driver view Ticket by Session",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "driver123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "driver1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ticketServiceUrl}}/api/tickets/booking-session/2",
+					"host": [
+						"{{ticketServiceUrl}}"
+					],
+					"path": [
+						"api",
+						"tickets",
+						"booking-session",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3rd Step: Driver book Ticket by Id",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "driver123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "driver1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{ticketServiceUrl}}/api/tickets/1/book",
+					"host": [
+						"{{ticketServiceUrl}}"
+					],
+					"path": [
+						"api",
+						"tickets",
+						"1",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4th Step: Driver view Tickets after booking",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "driver123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "driver1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ticketServiceUrl}}/api/tickets/driver",
+					"host": [
+						"{{ticketServiceUrl}}"
+					],
+					"path": [
+						"api",
+						"tickets",
+						"driver"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Driver view Available Assignments",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "driver123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "driver1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assignmentServiceUrl}}/api/assignments/available/for-driver",
+					"host": [
+						"{{assignmentServiceUrl}}"
+					],
+					"path": [
+						"api",
+						"assignments",
+						"available",
+						"for-driver"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5h Step: Claim an Assignments",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "ticketServiceUrl",
+			"value": "http://localhost:8083",
+			"type": "default"
+		},
+		{
+			"key": "bookingServiceUrl",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "assignmentServiceUrl",
+			"value": "",
+			"type": "default"
+		}
+	]
+}

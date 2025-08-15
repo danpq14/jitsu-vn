@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(gradlew:*)",
+      "Bash(./gradlew:*)",
+      "Bash(rm:*)",
+      "Bash(mv:*)",
+      "Bash(docker exec:*)"
+    ],
+    "deny": [],
+    "defaultMode": "acceptEdits"
+  }
+}

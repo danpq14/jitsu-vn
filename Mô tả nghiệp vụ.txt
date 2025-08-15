@@ -1,0 +1,17 @@
+Quy trình thực tế:
+- Admin mở Booking Session cho Zone, đặt ra số lượng ticket, thời gian, danh sách driver target.
+
+- Driver vào book ticket nếu đủ điều kiện.
+
+- Sau khi kết thúc phiên book, admin/operation sẽ gán assignment cụ thể cho các driver đã book ticket thành công.
+
+- Chỉ driver đã sở hữu ticket hợp lệ mới được claim assignment của zone đó.
+
+- Hệ thống có thể tự động hoặc theo thao tác admin, claim assignment cho từng driver.
+
+Lưu ý về logic
+- 1 Assignment thuộc 1 zone, mỗi assignment chỉ được claim bởi 1 ticket (một driver).
+
+- 1 Ticket chỉ claim 1 assignment.
+
+- Mỗi Booking Session quản lý các ticket (không trực tiếp quản lý assignments, chỉ gián tiếp qua claim ticket > assignment).

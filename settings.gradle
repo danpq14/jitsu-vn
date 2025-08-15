@@ -1,0 +1,8 @@
+rootProject.name = 'jitsu'
+
+include 'common'
+include 'booking-service'
+include 'ticket-service'
+include 'assignment-service'
+include 'event-processor'
+include 'api-gateway'
